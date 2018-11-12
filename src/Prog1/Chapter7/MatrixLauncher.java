@@ -42,9 +42,6 @@ public class MatrixLauncher {
             matrixC = MatrixOperations.matrixMultiplication(matrixA, matrixB);
             MatrixOperations.printMatrix(matrixC, "matrixA * matrixB");
 
-
-
-
             // yes continue else break
             System.out.println("do you want to continue? [y / n]");
             if (!scan.nextLine().equals("y")) {
