@@ -1,5 +1,5 @@
 package Prog1.Chapter7;
-
+import Prog1.UniUtils;
 import java.util.Scanner;
 
 public class MatrixLauncher {
@@ -45,6 +45,7 @@ public class MatrixLauncher {
             // yes continue else break
             System.out.println("do you want to continue? [y / n]");
             if (!scan.nextLine().equals("y")) {
+                UniUtils.printAuthor();
                 break;
             }
         }

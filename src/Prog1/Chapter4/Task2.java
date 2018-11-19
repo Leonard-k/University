@@ -1,9 +1,10 @@
 package Prog1.Chapter4;
+import Prog1.UniUtils;
 
 public class Task2 {
     public static void main(String[] args) {
 
-        int n = 100;
+        int n = 50;
         int d ,i;
         int c = (int) Math.sqrt(n) + 1;
 
@@ -35,5 +36,7 @@ public class Task2 {
                 System.out.print(i + " ");
             }
         }
+
+        UniUtils.printAuthor();
     }
 }

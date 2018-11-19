@@ -1,5 +1,5 @@
 package Prog1.Chapter7;
-
+import Prog1.UniUtils;
 import java.util.Arrays;
 
 public class Task2 {
@@ -31,6 +31,6 @@ public class Task2 {
         System.out.println("arrayA: "+ Arrays.toString(arrayA));
         System.out.println("arrayB: " + Arrays.toString(arrayB));
 
-
+        UniUtils.printAuthor();
     }
 }

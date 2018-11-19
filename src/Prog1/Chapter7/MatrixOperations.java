@@ -1,11 +1,15 @@
 package Prog1.Chapter7;
-
 import java.util.Arrays;
 
 public class MatrixOperations {
 
-    // todo doc comments
-
+    /**
+     * Returns a new Matrix of the size n times m
+     * initialized with random numbers from 0 to 9 inclusive.
+     * @param n one dimension size of the new matrix
+     * @param m the other dimension size of the new matrix
+     * @return an matrix of size n times m
+     */
     public static int[][] createMatrix(int n, int m) {
 
         // check input
@@ -26,6 +30,12 @@ public class MatrixOperations {
         return matrix;
     }
 
+    /**
+     *  Prints the matrix m, with the String s as heading,
+     *  to standard output.
+     * @param m the matrix
+     * @param s the header String
+     */
     public static void printMatrix(int[][] m, String s) {
         System.out.println(s);
         for (int[] row : m) {
@@ -34,6 +44,13 @@ public class MatrixOperations {
         System.out.println();
     }
 
+    /**
+     *  Returns the sum of matrixA and matrixB if possible
+     *  and an empty matrix otherwise.
+     * @param matrixA the first matrix
+     * @param matrixB the second matrix
+     * @return the sum if possible else an empty matrix
+     */
     public static int[][] sumMatrix(int[][] matrixA, int[][] matrixB) {
 
         // check for same dimensions
@@ -55,6 +72,13 @@ public class MatrixOperations {
         return matrixC;
     }
 
+    /**
+     *  Returns the product of matrixA and matrixB if possible
+     *  and an empty matrix otherwise.
+     * @param matrixA the first matrix
+     * @param matrixB the second matrix
+     * @return the product if possible else an empty matrix
+     */
     public static int[][] matrixMultiplication(int[][] matrixA, int[][] matrixB) {
 
         // check input for empty or not matching matrices
