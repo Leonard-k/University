@@ -3,7 +3,6 @@ package Prog1.Chapter7.Vierecke;
 import Prog1.UniUtils;
 
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,7 +28,6 @@ public class ViereckLauncher {
         for (Figure f : figures) {
             System.out.println(String.format(template, f.getClass().toString(), f.getFlaeche(), f.getUmfang()));
         }
-
 
 
         //user interface:

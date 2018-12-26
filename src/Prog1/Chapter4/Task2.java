@@ -4,7 +4,7 @@ import Prog1.UniUtils;
 public class Task2 {
     public static void main(String[] args) {
 
-        int n = 50;
+        int n = 5;
         int d ,i;
         int c = (int) Math.sqrt(n) + 1;
 
