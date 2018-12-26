@@ -1,14 +1,11 @@
 package Prog1.Chapter4;
-
 import Prog1.UniUtils;
-
-import java.io.*;
 
 public class Task2 {
     public static void main(String[] args) {
 
-        int n = 1000000000;
-        int d, i;
+        int n = 5;
+        int d ,i;
         int c = (int) Math.sqrt(n) + 1;
 
         // declare bool array
@@ -19,7 +16,7 @@ public class Task2 {
             primes[i] = true;
         }
 
-        // go over all numbers from 2 to c
+        // go over all numbers from 2 to n
         for (int k = 2; k < c; k++) {
 
             // if its a multiple of a previous number all its multiples are already false
@@ -33,20 +30,13 @@ public class Task2 {
             }
         }
 
-        //todo tmp
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream("C:\\Users\\leona\\Desktop\\primes.txt"), "utf-8"))) {
-
-            //print out all the prime numbers
-            for (i = 2; i <= n; i++) {
-                if (primes[i]) {
-                    writer.write(i + " ");
-                    //System.out.print(i + " ");
-                }
+        //print out all the prime numbers
+        for (i = 2; i <= n; i++) {
+            if (primes[i]) {
+                System.out.print(i + " ");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
         UniUtils.printAuthor();
     }
 }
