@@ -3,7 +3,7 @@ package Prog1.Chapter7.Vierecke;
 public class Parallelogramm extends Trapez {
 
     // you only need 3 points to define a parallelogram
-    public Parallelogramm(double[] a, double[] b, double[] c) {
+    public Parallelogramm(Point a, Point b, Point c) {
         super(a, b, c, null);
     }
 

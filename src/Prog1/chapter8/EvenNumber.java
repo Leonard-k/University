@@ -6,10 +6,11 @@ public class EvenNumber {
     public EvenNumber(int n) throws NotEvenException {
         if (n % 2 != 0)
             throw new NotEvenException(n);
-        this.n = n;
+        else
+            this.n = n;
     }
 
-    public EvenNumber add ( EvenNumber number, EvenNumber... numbers){
+    public EvenNumber add(EvenNumber number, EvenNumber... numbers) {
         int sum = n + number.getInt();
         for (EvenNumber e : numbers) {
             sum += e.getInt();
@@ -17,13 +18,12 @@ public class EvenNumber {
         try {
             return new EvenNumber(sum);
         } catch (NotEvenException e) {
-            // cant really happen cause input numbers are always even
-            e.printStackTrace();
+            // can't really happen cause input numbers are always even
             return null;
         }
     }
 
-    public EvenNumber multiplyWith ( EvenNumber number, EvenNumber... numbers){
+    public EvenNumber multiplyWith(EvenNumber number, EvenNumber... numbers) {
         int sum = n * number.getInt();
         for (EvenNumber e : numbers) {
             sum *= e.getInt();
@@ -31,10 +31,14 @@ public class EvenNumber {
         try {
             return new EvenNumber(sum);
         } catch (NotEvenException e) {
-            // cant really happen cause input numbers are always even
-            e.printStackTrace();
+            // can't really happen cause input numbers are always even
             return null;
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.getInt() + "";
     }
 
     public int getInt() {

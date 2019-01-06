@@ -2,7 +2,7 @@ package Prog1.Chapter7.Vierecke;
 
 public class Rechteck extends Parallelogramm {
 
-    public Rechteck(double[] a, double[] b, double[] c) {
+    public Rechteck(Point a, Point b, Point c) {
         super(a, b, c);
     }
 

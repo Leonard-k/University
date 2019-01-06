@@ -1,24 +1,25 @@
 package Prog1.Chapter7.Vierecke;
 
 public abstract class Viereck implements Figure {
-    protected static final int X = 0;
-    protected static final int Y = 1;
-    protected double[] a; // [ x, y]
-    protected double[] b; // [ x, y]
-    protected double[] c; // [ x, y]
-    protected double[] d; // [ x, y]
+    protected Point a;
+    protected Point b;
+    protected Point c;
+    protected Point d;
     protected double side1; // a to b
     protected double side2; // b to c
     protected double side3; // c to d
     protected double side4; // d to a
 
-    public Viereck(double[] a, double[] b, double[] c, double[] d) {
-        //always
+    public Viereck(Point a, Point b, Point c, Point d) {
+
+        // initialize always
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
         side1 = getAbstand(a, b);
+
+        // initialize only when possible/needed
         if (c != null) {
             side2 = getAbstand(b, c);
             if (d != null) {
@@ -44,13 +45,14 @@ public abstract class Viereck implements Figure {
         return flaeche;
     }
 
-    protected double getAbstand(double[] a, double[] b) {
-        double x = Math.abs(a[X] - b[X]);
-        double y = Math.abs(a[Y] - b[Y]);
+    protected double getAbstand(Point a, Point b) {
+        double x = Math.abs(a.X - b.X);
+        double y = Math.abs(a.Y - b.Y);
         return Math.sqrt(x * x + y * y);
     }
 
-    protected double getWinkel(double[] a, double[] b, double[] c) { // berechnet den Winkel bei b
+    // berechnet den Winkel bei b
+    protected double getWinkel(Point a, Point b, Point c) {
         double sA = getAbstand(b, c);
         double sB = getAbstand(c, a);
         double sC = getAbstand(a, b);
@@ -58,9 +60,22 @@ public abstract class Viereck implements Figure {
         return Math.acos((sC * sC + sA * sA - sB * sB) / (2 * sC * sA));
     }
 
-    protected double getHoehe(double[] a, double[] b, double[] c) {
+    protected double getHoehe(Point a, Point b, Point c) {
         double alpha = getWinkel(a, b, c);
         return Math.sin(alpha) * getAbstand(b, c);
     }
 
+    @Override
+    public String toString() {
+        return String.format("[%s,%s,%s,%s]", PointToStr(a), PointToStr(b), PointToStr(c), PointToStr(d));
+    }
+
+    private String PointToStr(Point point) {
+        if (point == null) {
+            return "(---)";
+        }
+        // runden der kommazahlen damit man die punkte besser lesen kann
+        // dies beinflusst nur die ausgabe nicht die Berechnung
+        return String.format("(%1.0f/%1.0f)", point.X, point.Y);
+    }
 }
